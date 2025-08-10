@@ -255,45 +255,43 @@ margin-top:7px; box-shadow:0 0 16px rgba(124,92,255,.55);
   </div>
 </section>
 
-  <section id="inne-role" class="section muted"> <div class="container"> <h2>Nie jesteś przekonany? Spokojnie — pomogę tam, gdzie teraz najbardziej potrzebujecie</h2> <p class="sublead">Jeśli timing na rolę AI jeszcze u Was dojrzewa, dołożę wartość w innych obszarach. Szybko się wdrażam i biorę odpowiedzialność za wynik.</p>
-<div class="grid cards">
-  <article class="card">
-    <h3>Operacyjna prawa ręka</h3>
-    <ul>
-      <li>Administracja: dokumenty, umowy, harmonogramy, faktury</li>
-      <li>Research i briefy pod decyzje zarządcze</li>
-      <li>Usprawnienia procesów, checklisty i automatyzacje niskokodowe</li>
-    </ul>
-  </article>
+ <section id="inne-role" class="section alt-roles"> <div class="container"> <span class="kicker">Elastyczne dopasowanie</span> <h2 class="mega-headline"> Nie jesteś przekonany? Luz. Dam wartość <span class="accent">tam, gdzie teraz jej potrzebujecie</span>. </h2> <p class="roles-intro"> Jeśli rola stricte AI musi poczekać, mogę wejść w operacje, obsługę klienta lub support. Szybko się wdrażam, biorę odpowiedzialność i dowożę wynik. </p>
+<ul class="roles">
+  <li>
+    <span class="dot" aria-hidden="true"></span>
+    <div>
+      <div class="title">Operacyjna prawa ręka</div>
+      <div class="desc">Dokumenty, umowy, harmonogramy, faktury. Research i briefy pod decyzje. Uporządkowane procesy i lekkie automatyzacje.</div>
+    </div>
+  </li>
+  <li>
+    <span class="dot" aria-hidden="true"></span>
+    <div>
+      <div class="title">Obsługa klienta i account</div>
+      <div class="desc">Onboarding, opieka i utrzymanie satysfakcji. Baza wiedzy, szablony odpowiedzi, feedback loop do produktu i marketingu.</div>
+    </div>
+  </li>
+  <li>
+    <span class="dot" aria-hidden="true"></span>
+    <div>
+      <div class="title">Helpdesk (także po godzinach)</div>
+      <div class="desc">Ticketing, SLA, priorytety i eskalacje. Makra, integracje z CRM i raporty: czas reakcji/rozwiązania, top problemy.</div>
+    </div>
+  </li>
+  <li>
+    <span class="dot" aria-hidden="true"></span>
+    <div>
+      <div class="title">Specjalne misje</div>
+      <div class="desc">Nawet „zrywanie polnych kwiatów” — znajdę te najrzadsze. Krótko: lubię nietypowe zadania i dowożę je z uśmiechem.</div>
+    </div>
+  </li>
+</ul>
 
-  <article class="card">
-    <h3>Obsługa klienta i account</h3>
-    <ul>
-      <li>Onboarding, opieka i utrzymanie satysfakcji (CS/AM)</li>
-      <li>Budowa bazy wiedzy i szablonów odpowiedzi</li>
-      <li>Feedback loop do produktu i marketingu</li>
-    </ul>
-  </article>
-
-  <article class="card">
-    <h3>Helpdesk, także po godzinach</h3>
-    <ul>
-      <li>Ticketing, SLA, priorytety i eskalacje</li>
-      <li>Makra, automaty i integracje z CRM</li>
-      <li>Raporty: najczęstsze problemy, czas reakcji/rozwiązania</li>
-    </ul>
-  </article>
-
-  <article class="card">
-    <h3>Specjalne misje</h3>
-    <p>Tak, nawet zrywanie polnych kwiatów — znajdę te najrzadsze. A poważnie: lubię nietypowe zadania i dowożę je z uśmiechem.</p>
-  </article>
-</div>
-
-<div class="center">
+<div class="cta">
   <a href="#kontakt" class="btn btn-primary">Porozmawiajmy o najlepszym dopasowaniu</a>
   <a href="#materialy" class="btn btn-ghost">Zobacz materiały</a>
 </div>
+<p class="aside">PS. „Bo naprawdę na dużo mnie stać” — chętnie udowodnię w 2‑tygodniowym pilotażu.</p>
 </div> </section>
 
 <section id="plan" class="section muted">
@@ -367,6 +365,7 @@ margin-top:7px; box-shadow:0 0 16px rgba(124,92,255,.55);
   </div>
 </section>
 </main> <footer class="site-footer"> <div class="container footer-inner"> <p>© <span id="year"></span> Tobiasz Bykowski • Stworzone specjalnie dla inStreamly</p> <div class="footer-links"> <a href="#" aria-disabled="true">CV (PDF)</a> <a href="#" aria-disabled="true">Case study (wkrótce)</a> </div> </div> </footer> <script> // Rok w stopce document.getElementById('year').textContent = new Date().getFullYear(); // Mobile nav toggle const navToggle = document.querySelector('.nav-toggle'); const navList = document.querySelector('.nav-list'); if (navToggle && navList) { navToggle.addEventListener('click', () => { const open = navList.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); }); navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navList.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); })); } // Smooth scroll document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e){ const id = this.getAttribute('href').slice(1); const el = document.getElementById(id); if (el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); } }); }); // Kopiowanie e-maila const btnCopy = document.getElementById('copyEmail'); if (btnCopy){ btnCopy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(btnCopy.dataset.email); btnCopy.textContent = 'Skopiowano ✔'; setTimeout(()=> btnCopy.textContent = 'Kopiuj e-mail', 1600); } catch(e){ btnCopy.textContent = 'Błąd kopiowania'; } }); } // Formularz -> mailto (bez backendu) function handleMailto(e){ e.preventDefault(); const f = e.target; const name = encodeURIComponent(f.name.value); const email = encodeURIComponent(f.email.value); const message = encodeURIComponent(f.message.value); const body = `Imię: ${name}%0AEmail: ${email}%0A%0AWiadomość:%0A${message}`; window.location.href = `mailto:tobiasz.bykowski@gmail.com?subject=Kontakt%20ze%20strony&body=${body}`; } window.handleMailto = handleMailto; </script> </body> </html>
+
 
 
 
