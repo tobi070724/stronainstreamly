@@ -1,0 +1,197 @@
+<!doctype html> <html lang="pl"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Tobiasz Bykowski — AI x Gaming dla inStreamly</title> <meta name="description" content="AI + marketing + sprzedaż + automatyzacje. Gaming DNA. Strona kandydata przygotowana specjalnie dla inStreamly."> <style> :root{ --bg:#0b0e14; --bg-soft:#111520; --card:#151a28; --text:#e7ecf3; --muted:#a7b0c0; --primary:#7c5cff; --primary-2:#4b35e2; --accent:#00d4ff; --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.35); } *{box-sizing:border-box} html,body{margin:0;padding:0} body{ font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: radial-gradient(1200px 600px at 80% -10%, rgba(124,92,255,.15), transparent 60%), var(--bg); color:var(--text); line-height:1.6; } .container{width:min(1120px,92%); margin:0 auto} .section{padding:72px 0} .section.muted{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0) 30%)} a{color:inherit} .btn{display:inline-block; text-decoration:none; cursor:pointer; user-select:none; border-radius:12px; padding:10px 14px; font-weight:700; border:1px solid transparent} .btn-primary{background:linear-gradient(135deg, var(--primary), var(--primary-2)); color:#fff} .btn-ghost{background:transparent; border:1px solid rgba(255,255,255,.14); color:var(--text)} .btn-secondary{background:#0f1422; border:1px solid rgba(255,255,255,.14); color:var(--text)} .btn:hover{transform:translateY(-1px); transition:.15s ease}
+/* Header */
+.site-header{position:sticky; top:0; z-index:50; background:rgba(11,14,20,.7); backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+.brand{display:inline-grid; place-items:center; width:40px; height:40px; border-radius:10px;
+  background:linear-gradient(135deg, var(--primary), var(--accent)); color:#0b0e14; font-weight:800; letter-spacing:.5px; text-decoration:none}
+.nav-toggle{display:none; background:none; border:none; color:var(--text); font-size:22px}
+.nav-list{display:flex; gap:16px; list-style:none; margin:0; padding:0}
+.nav-list a{color:var(--text); text-decoration:none; padding:8px 10px; border-radius:8px}
+.nav-list a:hover{background:rgba(255,255,255,.06)}
+
+/* Hero */
+.hero{position:relative; padding:72px 0 36px}
+.hero-content{display:grid; grid-template-columns:1.15fr .85fr; gap:36px; align-items:stretch}
+.hero-text h1{font-size:42px; line-height:1.15; margin:.2em 0 .2em}
+.lead{color:var(--muted); font-size:18px}
+.meta{margin-top:10px; color:var(--muted); font-size:14px}
+.cta{display:flex; gap:12px; margin-top:18px}
+.hero-card{
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.07); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)
+}
+.badge{display:inline-block; background:linear-gradient(135deg, var(--primary), var(--accent)); color:#0b0e14; font-weight:700; border-radius:999px; padding:6px 12px; font-size:12px; letter-spacing:.3px}
+.highlights{margin:12px 0 0; padding-left:18px}
+.highlights li{margin:6px 0}
+.hero-bg{position:absolute; inset:0; pointer-events:none; z-index:-1; background: radial-gradient(600px 300px at 20% 0%, rgba(0,212,255,.15), transparent 60%)}
+
+/* Sections */
+h2{font-size:28px; margin:0 0 18px} h3{margin:0 0 10px}
+.grid{display:grid; gap:18px}
+.cards{grid-template-columns:repeat(3,1fr)}
+.cards .card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:18px}
+.metrics{grid-template-columns: repeat(3, 1fr)}
+.metric{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:18px; text-align:center}
+.metric .value{font-size:32px; font-weight:800; background:linear-gradient(135deg, var(--accent), var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+.metric .label{color:var(--muted); font-size:14px}
+.cases{grid-template-columns:repeat(2,1fr)}
+.case{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:18px}
+.case ul{margin:10px 0 0 18px}
+.plan{grid-template-columns:repeat(3,1fr)}
+.step{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:18px}
+.center{display:flex; justify-content:center; margin-top:18px}
+
+/* Kontakt */
+.contact{grid-template-columns: 1fr 1fr}
+.contact-card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:18px}
+.contact-list{list-style:none; padding:0; margin:10px 0}
+.contact-list a{color:var(--text)}
+.form{display:grid; gap:12px; background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:18px}
+label{display:grid; gap:6px; font-weight:600}
+input, textarea{background:#0f1422; border:1px solid rgba(255,255,255,.08); color:var(--text); padding:10px 12px; border-radius:10px; outline:none}
+input:focus, textarea:focus{border-color:var(--primary)}
+.form-note{color:var(--muted); font-size:12px; margin:6px 0 0}
+
+/* Footer */
+.site-footer{border-top:1px solid rgba(255,255,255,.06); padding:20px 0; margin-top:24px}
+.footer-inner{display:flex; justify-content:space-between; align-items:center}
+.footer-links{display:flex; gap:14px}
+.footer-links a{color:var(--muted); text-decoration:none}
+.footer-links a:hover{color:var(--text)}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero-content{grid-template-columns:1fr}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .cases{grid-template-columns:1fr}
+  .plan{grid-template-columns:1fr}
+  .contact{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .nav-list{display:none; position:absolute; right:4%; top:64px; width:92%; background:var(--bg-soft); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:10px}
+  .nav-list.open{display:grid}
+  .nav-toggle{display:inline-block}
+  .cards{grid-template-columns:1fr}
+}
+</style> </head> <body> <header class="site-header"> <div class="container nav"> <a class="brand" href="#top" aria-label="Strona główna">TB</a> <nav> <button class="nav-toggle" aria-label="Otwórz menu" aria-expanded="false">☰</button> <ul class="nav-list"> <li><a href="#o-mnie">O mnie</a></li> <li><a href="#wyniki">Wyniki</a></li> <li><a href="#ai">AI projekty</a></li> <li><a href="#plan">Plan 30/60/90</a></li> <li><a href="#kontakt" class="btn btn-primary">Kontakt</a></li> </ul> </nav> </div> </header> <main id="top"> <section class="hero"> <div class="container hero-content"> <div class="hero-text"> <h1>AI x Gaming dla inStreamly</h1> <p class="lead">Jestem Tobiasz Bykowski — game master, który przekłada strategię na mierzalne efekty. Tworzę od zera, wdrażam AI, dowożę wyniki w marketingu i sprzedaży.</p> <div class="cta"> <a href="#kontakt" class="btn btn-primary">Umówmy rozmowę</a> <a href="#plan" class="btn btn-ghost">Zobacz plan 30/60/90</a> </div> <div class="meta"> <span>tobiasz.bykowski@gmail.com</span> • <span>+48 882 312 380</span> </div> </div> <div class="hero-card"> <div class="badge">AI Commercial Innovation Expert</div> <ul class="highlights"> <li><strong>+20%</strong> więcej leadów (CRM + automatyzacje)</li> <li><strong>+30%</strong> widoczność SEO</li> <li><strong>372</strong> leady w 3 miesiące (Vacation Investments)</li> <li>Boty w n8n, asystenci językowi i dietetyczni</li> <li>Dota 2, EU IV, RimWorld — gaming DNA</li> </ul> </div> </div> <div class="hero-bg"></div> </section>
+<section id="o-mnie" class="section">
+  <div class="container">
+    <h2>Dlaczego ja</h2>
+    <div class="grid cards">
+      <article class="card"><h3>Marketing i sprzedaż</h3><p>Buduję działy od zera, wdrażam CRM i automatyzacje zwiększające wyniki.</p></article>
+      <article class="card"><h3>B2B i B2C</h3><p>Rozmowy z zarządami i storytelling dla konsumentów — dobieram język do odbiorcy.</p></article>
+      <article class="card"><h3>Tworzenie od zera</h3><p>Fundacja, produkty cyfrowe, strategie, kanały sprzedaży — dowożę od pomysłu do systemu.</p></article>
+      <article class="card"><h3>AI jako narzędzie</h3><p>Szkolenia z ChatGPT/Copilot, boty w n8n, własni asystenci. Skupiam się na ROI.</p></article>
+      <article class="card"><h3>Streaming i gry</h3><p>Naturalne środowisko — rozumiem community i dynamikę platform.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="wyniki" class="section muted">
+  <div class="container">
+    <h2>Wyniki, nie tylko deklaracje</h2>
+    <div class="grid metrics">
+      <div class="metric"><div class="value">+20%</div><div class="label">więcej leadów</div></div>
+      <div class="metric"><div class="value">+30%</div><div class="label">większa widoczność</div></div>
+      <div class="metric"><div class="value">372</div><div class="label">leady w 3 mies.</div></div>
+    </div>
+    <div class="grid cases">
+      <article class="case">
+        <h3>Vacation Investments</h3>
+        <p>Wdrożenie CRM, automatyzacji i kampanii — 372 leady w 3 miesiące, wzrost widoczności o 30%.</p>
+        <ul>
+          <li>Koncepcja lejka i segmentacja</li>
+          <li>Automatyzacje nurturujące</li>
+          <li>Dashboard wyników dla zarządu</li>
+        </ul>
+      </article>
+      <article class="case">
+        <h3>IT B2B</h3>
+        <p>Badania rynku, persony decyzyjne, kampanie performance, treści dla zarządów i zespołów technicznych.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="ai" class="section">
+  <div class="container">
+    <h2>AI, które rozwiązuje problemy</h2>
+    <div class="grid cards">
+      <article class="card"><h3>Asystenci specjalistyczni</h3><p>Językowy i dietetyczny — kontekst domenowy, walidacja odpowiedzi, guardraile.</p></article>
+      <article class="card"><h3>Boty i automatyzacje</h3><p>n8n + API: enrich leadów, scoring, generowanie assetów, raporty tygodniowe.</p></article>
+      <article class="card"><h3>Szkolenia i standardy</h3><p>Warsztaty z ChatGPT/Copilot, polityki użycia, biblioteka promptów.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="plan" class="section muted">
+  <div class="container">
+    <h2>Co zrobię dla inStreamly — plan 30/60/90</h2>
+    <div class="grid plan">
+      <article class="step">
+        <h3>30 dni: szybkie wygrane</h3>
+        <ul>
+          <li>Audit lejków + priorytety</li>
+          <li>Prototyp 1–2 asystentów AI (research, copy, briefs)</li>
+          <li>Automatyzacje: enrich leadów, scoring, CRM hygiene</li>
+          <li>3 propozycje kampanii brand x streamer</li>
+        </ul>
+      </article>
+      <article class="step">
+        <h3>60 dni: skalowanie</h3>
+        <ul>
+          <li>Standaryzacja promptów i repo przepływów</li>
+          <li>Integracja botów z pipeline’m sprzedaży</li>
+          <li>Eksperymenty A/B (kreacje AI, landingi)</li>
+          <li>Dashboard KPI (MQL/SQL, CAC, LTV)</li>
+        </ul>
+      </article>
+      <article class="step">
+        <h3>90 dni: efekt compounding</h3>
+        <ul>
+          <li>Systematyzacja lead gen i content engine</li>
+          <li>Wewnętrzny AI playbook</li>
+          <li>Pilotaż partnerstwa z marką — case study</li>
+          <li>Roadmapa AI na 6–12 mies.</li>
+        </ul>
+      </article>
+    </div>
+    <div class="center">
+      <a href="#kontakt" class="btn btn-primary">Przygotujmy 2-tygodniowy pilotaż</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="section">
+  <div class="container">
+    <h2>Kontakt</h2>
+    <div class="grid contact">
+      <div class="contact-card">
+        <p>Masz 15 minut? Z przyjemnością pokażę demo i konkretne pomysły pod Wasze cele.</p>
+        <ul class="contact-list">
+          <li>Email: <a href="mailto:tobiasz.bykowski@gmail.com">tobiasz.bykowski@gmail.com</a></li>
+          <li>Telefon: <a href="tel:+48882312380">+48 882 312 380</a></li>
+        </ul>
+        <div class="cta">
+          <a class="btn btn-ghost" href="mailto:tobiasz.bykowski@gmail.com?subject=Rozmowa%20-%20inStreamly">Napisz maila</a>
+          <button class="btn btn-secondary" id="copyEmail" data-email="tobiasz.bykowski@gmail.com">Kopiuj e-mail</button>
+        </div>
+      </div>
+
+      <form class="form" onsubmit="handleMailto(event)">
+        <label>Imię
+          <input type="text" name="name" placeholder="Twoje imię" required>
+        </label>
+        <label>E-mail
+          <input type="email" name="email" placeholder="nazwa@firma.com" required>
+        </label>
+        <label>Wiadomość
+          <textarea name="message" rows="5" placeholder="Krótko opisz temat rozmowy" required></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">Wyślij</button>
+        <p class="form-note">Formularz otworzy Twojego klienta poczty (bez żadnych zewnętrznych usług).</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main> <footer class="site-footer"> <div class="container footer-inner"> <p>© <span id="year"></span> Tobiasz Bykowski • Stworzone specjalnie dla inStreamly</p> <div class="footer-links"> <a href="#" aria-disabled="true">CV (PDF)</a> <a href="#" aria-disabled="true">Case study (wkrótce)</a> </div> </div> </footer> <script> // Rok w stopce document.getElementById('year').textContent = new Date().getFullYear(); // Mobile nav toggle const navToggle = document.querySelector('.nav-toggle'); const navList = document.querySelector('.nav-list'); if (navToggle && navList) { navToggle.addEventListener('click', () => { const open = navList.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); }); navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navList.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); })); } // Smooth scroll document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e){ const id = this.getAttribute('href').slice(1); const el = document.getElementById(id); if (el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); } }); }); // Kopiowanie e-maila const btnCopy = document.getElementById('copyEmail'); if (btnCopy){ btnCopy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(btnCopy.dataset.email); btnCopy.textContent = 'Skopiowano ✔'; setTimeout(()=> btnCopy.textContent = 'Kopiuj e-mail', 1600); } catch(e){ btnCopy.textContent = 'Błąd kopiowania'; } }); } // Formularz -> mailto (bez backendu) function handleMailto(e){ e.preventDefault(); const f = e.target; const name = encodeURIComponent(f.name.value); const email = encodeURIComponent(f.email.value); const message = encodeURIComponent(f.message.value); const body = `Imię: ${name}%0AEmail: ${email}%0A%0AWiadomość:%0A${message}`; window.location.href = `mailto:tobiasz.bykowski@gmail.com?subject=Kontakt%20ze%20strony&body=${body}`; } window.handleMailto = handleMailto; </script> </body> </html>
