@@ -95,11 +95,13 @@ input:focus, textarea:focus{border-color:var(--primary)}
     <div class="hero-card">
       <div class="badge">AI Commercial Innovation Expert</div>
       <ul class="highlights">
-        <li><strong>+20%</strong> więcej leadów (CRM + automatyzacje)</li>
-        <li><strong>+30%</strong> widoczność SEO</li>
-        <li><strong>372</strong> leady w 3 miesiące (Vacation Investments)</li>
-        <li>Boty w n8n, asystenci językowi i dietetyczni</li>
-        <li>Dota 2, EU IV, RimWorld — gaming DNA</li>
+        <li><strong>1 z 25</strong> studentów w Polsce wyróżnionych Złotym Indeksem przez Narodowy Bank Polski</li>
+        <li><strong>372 leady w 3 miesiące </strong> w branży luksusowej (Vacation Investments)</li>
+        <li><strong>1000 subskrypcji </strong> na kanale firmy B2B pozycjonując stronę w kluczowych obszarach na pierwsze miejsce w wyszukiwarkach (Alterity.pl)</li>
+        <li><strong>3 mln wyświetleń w 3 miesiące</strong> na satyrycznym koncie w social mediach</li>
+        <li>Praca naukowa „Sztuczna Inteligencja jako narzędzie kształtowania komunikacji marketingowej przedsiębiorstwa na przykładzie rozwiązań OpenA” obroniona na 5</li>
+        <li>Organizacja największych programów stypendialnych oraz największego wydarzenia rodzinnego w regionie</li>
+        <li>Więcej statystyk znajdziesz w moim CV</li>
       </ul>
     </div>
   </div>
@@ -227,3 +229,4 @@ input:focus, textarea:focus{border-color:var(--primary)}
   </div>
 </section>
 </main> <footer class="site-footer"> <div class="container footer-inner"> <p>© <span id="year"></span> Tobiasz Bykowski • Stworzone specjalnie dla inStreamly</p> <div class="footer-links"> <a href="#" aria-disabled="true">CV (PDF)</a> <a href="#" aria-disabled="true">Case study (wkrótce)</a> </div> </div> </footer> <script> // Rok w stopce document.getElementById('year').textContent = new Date().getFullYear(); // Mobile nav toggle const navToggle = document.querySelector('.nav-toggle'); const navList = document.querySelector('.nav-list'); if (navToggle && navList) { navToggle.addEventListener('click', () => { const open = navList.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); }); navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navList.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); })); } // Smooth scroll document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e){ const id = this.getAttribute('href').slice(1); const el = document.getElementById(id); if (el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); } }); }); // Kopiowanie e-maila const btnCopy = document.getElementById('copyEmail'); if (btnCopy){ btnCopy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(btnCopy.dataset.email); btnCopy.textContent = 'Skopiowano ✔'; setTimeout(()=> btnCopy.textContent = 'Kopiuj e-mail', 1600); } catch(e){ btnCopy.textContent = 'Błąd kopiowania'; } }); } // Formularz -> mailto (bez backendu) function handleMailto(e){ e.preventDefault(); const f = e.target; const name = encodeURIComponent(f.name.value); const email = encodeURIComponent(f.email.value); const message = encodeURIComponent(f.message.value); const body = `Imię: ${name}%0AEmail: ${email}%0A%0AWiadomość:%0A${message}`; window.location.href = `mailto:tobiasz.bykowski@gmail.com?subject=Kontakt%20ze%20strony&body=${body}`; } window.handleMailto = handleMailto; </script> </body> </html>
+
