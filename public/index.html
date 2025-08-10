@@ -255,27 +255,27 @@ margin-top:7px; box-shadow:0 0 16px rgba(124,92,255,.55);
   </div>
 </section>
 
- <section id="inne-role" class="section alt-roles"> <div class="container"> <span class="kicker">Elastyczne dopasowanie</span> <h2 class="mega-headline"> Nie jesteś przekonany? Luz. Dam wartość <span class="accent">tam, gdzie teraz jej potrzebujecie</span>. </h2> <p class="roles-intro"> Jeśli rola stricte AI musi poczekać, mogę wejść w operacje, obsługę klienta lub support. Szybko się wdrażam, biorę odpowiedzialność i dowożę wynik. </p>
+ <section id="inne-role" class="section alt-roles"> <div class="container"> <span class="kicker">Elastyczne dopasowanie</span> <h2 class="mega-headline"> Nie jesteś przekonany? Luz. Dam wartość <span class="accent">tam, gdzie teraz jej potrzebujecie</span>. </h2> <p class="roles-intro"> Jeśli rola stricte AI musi poczekać, mogę wejść w  administracje, obsługę klienta lub support. Szybko się wdrażam, biorę odpowiedzialność i dowożę wynik. </p>
 <ul class="roles">
   <li>
     <span class="dot" aria-hidden="true"></span>
     <div>
       <div class="title">Operacyjna prawa ręka</div>
-      <div class="desc">Dokumenty, umowy, harmonogramy, faktury. Research i briefy pod decyzje. Uporządkowane procesy i lekkie automatyzacje.</div>
+      <div class="desc">Od dokumentów po harmonogramy – ogarniam to, co inni nie chcą robić. Wszystko jest na czas, w porządku i z automatyzacjami, które robią robotę w tle.</div>
     </div>
   </li>
   <li>
     <span class="dot" aria-hidden="true"></span>
     <div>
       <div class="title">Obsługa klienta i account</div>
-      <div class="desc">Onboarding, opieka i utrzymanie satysfakcji. Baza wiedzy, szablony odpowiedzi, feedback loop do produktu i marketingu.</div>
+      <div class="desc">Dbam, żeby onboarding był płynny, a klienci mieli powód wracać. Baza wiedzy, gotowe odpowiedzi i szczere feedbacki – dzięki temu każdy czuje się zaopiekowany.</div>
     </div>
   </li>
   <li>
     <span class="dot" aria-hidden="true"></span>
     <div>
-      <div class="title">Helpdesk (także po godzinach)</div>
-      <div class="desc">Ticketing, SLA, priorytety i eskalacje. Makra, integracje z CRM i raporty: czas reakcji/rozwiązania, top problemy.</div>
+      <div class="title">Helpdesk</div>
+      <div class="desc">Problemy gaszę szybciej niż zdążą się rozpalić. Ticketing, priorytety, raporty – wiem, co się dzieje i mam plan, jak to naprawić. Nie boję się też przyznać, że nie jestem wszechwiedzący i popełniam błędy.</div>
     </div>
   </li>
   <li>
@@ -294,43 +294,6 @@ margin-top:7px; box-shadow:0 0 16px rgba(124,92,255,.55);
 <p class="aside">PS. „Bo naprawdę na dużo mnie stać” — chętnie udowodnię w 2‑tygodniowym pilotażu.</p>
 </div> </section>
 
-<section id="plan" class="section muted">
-  <div class="container">
-    <h2>Co zrobię dla inStreamly — plan 30/60/90</h2>
-    <div class="grid plan">
-      <article class="step">
-        <h3>30 dni: szybkie wygrane</h3>
-        <ul>
-          <li>Audit lejków + priorytety</li>
-          <li>Prototyp 1–2 asystentów AI (research, copy, briefs)</li>
-          <li>Automatyzacje: enrich leadów, scoring, CRM hygiene</li>
-          <li>3 propozycje kampanii brand x streamer</li>
-        </ul>
-      </article>
-      <article class="step">
-        <h3>60 dni: skalowanie</h3>
-        <ul>
-          <li>Standaryzacja promptów i repo przepływów</li>
-          <li>Integracja botów z pipeline’m sprzedaży</li>
-          <li>Eksperymenty A/B (kreacje AI, landingi)</li>
-          <li>Dashboard KPI (MQL/SQL, CAC, LTV)</li>
-        </ul>
-      </article>
-      <article class="step">
-        <h3>90 dni: efekt compounding</h3>
-        <ul>
-          <li>Systematyzacja lead gen i content engine</li>
-          <li>Wewnętrzny AI playbook</li>
-          <li>Pilotaż partnerstwa z marką — case study</li>
-          <li>Roadmapa AI na 6–12 mies.</li>
-        </ul>
-      </article>
-    </div>
-    <div class="center">
-      <a href="#kontakt" class="btn btn-primary">Przygotujmy 2-tygodniowy pilotaż</a>
-    </div>
-  </div>
-</section>
 
 <section id="kontakt" class="section">
   <div class="container">
@@ -365,6 +328,7 @@ margin-top:7px; box-shadow:0 0 16px rgba(124,92,255,.55);
   </div>
 </section>
 </main> <footer class="site-footer"> <div class="container footer-inner"> <p>© <span id="year"></span> Tobiasz Bykowski • Stworzone specjalnie dla inStreamly</p> <div class="footer-links"> <a href="#" aria-disabled="true">CV (PDF)</a> <a href="#" aria-disabled="true">Case study (wkrótce)</a> </div> </div> </footer> <script> // Rok w stopce document.getElementById('year').textContent = new Date().getFullYear(); // Mobile nav toggle const navToggle = document.querySelector('.nav-toggle'); const navList = document.querySelector('.nav-list'); if (navToggle && navList) { navToggle.addEventListener('click', () => { const open = navList.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); }); navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navList.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); })); } // Smooth scroll document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e){ const id = this.getAttribute('href').slice(1); const el = document.getElementById(id); if (el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); } }); }); // Kopiowanie e-maila const btnCopy = document.getElementById('copyEmail'); if (btnCopy){ btnCopy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(btnCopy.dataset.email); btnCopy.textContent = 'Skopiowano ✔'; setTimeout(()=> btnCopy.textContent = 'Kopiuj e-mail', 1600); } catch(e){ btnCopy.textContent = 'Błąd kopiowania'; } }); } // Formularz -> mailto (bez backendu) function handleMailto(e){ e.preventDefault(); const f = e.target; const name = encodeURIComponent(f.name.value); const email = encodeURIComponent(f.email.value); const message = encodeURIComponent(f.message.value); const body = `Imię: ${name}%0AEmail: ${email}%0A%0AWiadomość:%0A${message}`; window.location.href = `mailto:tobiasz.bykowski@gmail.com?subject=Kontakt%20ze%20strony&body=${body}`; } window.handleMailto = handleMailto; </script> </body> </html>
+
 
 
 
