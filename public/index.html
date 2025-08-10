@@ -91,6 +91,65 @@ input:focus, textarea:focus{border-color:var(--primary)}
   .nav-toggle{display:inline-block}
   .cards{grid-template-columns:1fr}
 }
+
+  .alt-roles{
+position:relative;
+padding:84px 0;
+background:
+radial-gradient(900px 420px at 15% -10%, rgba(0,212,255,.16), transparent 60%),
+radial-gradient(900px 420px at 85% 110%, rgba(124,92,255,.18), transparent 60%),
+var(--bg);
+border-top:1px solid rgba(255,255,255,.06);
+border-bottom:1px solid rgba(255,255,255,.06);
+}
+.kicker{
+display:inline-block;
+padding:6px 10px;
+border:1px solid rgba(255,255,255,.14);
+border-radius:999px;
+font-size:12px;
+color:var(--muted);
+background:rgba(255,255,255,.03);
+}
+.mega-headline{
+font-size:clamp(30px, 5.2vw, 56px);
+line-height:1.05;
+margin:.35em 0 .2em;
+letter-spacing:.2px;
+}
+.mega-headline .accent{
+background:linear-gradient(135deg, var(--accent), var(--primary));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+color:transparent;
+}
+.roles-intro{color:var(--muted); max-width:840px}
+.roles{
+list-style:none; padding:0; margin:26px 0 0;
+border-top:1px solid rgba(255,255,255,.08);
+}
+.roles li{
+display:grid;
+grid-template-columns:16px 1fr;
+gap:14px;
+padding:18px 0;
+border-bottom:1px solid rgba(255,255,255,.08);
+transition:background .2s ease, transform .2s ease;
+}
+.roles li:hover{
+background:linear-gradient(90deg, rgba(124,92,255,.08), rgba(0,212,255,.06) 40%, transparent);
+transform:translateY(-1px);
+}
+.roles .dot{
+width:10px; height:10px; border-radius:50%;
+background:linear-gradient(135deg, var(--accent), var(--primary));
+margin-top:7px; box-shadow:0 0 16px rgba(124,92,255,.55);
+}
+.roles .title{font-weight:800}
+.roles .desc{color:var(--muted); margin-top:2px}
+.alt-roles .cta{margin-top:22px; gap:12px}
+.alt-roles .aside{color:var(--muted); font-size:13px; margin-top:10px}
 </style> </head> <body> <header class="site-header"> <div class="container nav"> <a class="brand" href="#top" aria-label="Strona główna">TB</a> <nav> <button class="nav-toggle" aria-label="Otwórz menu" aria-expanded="false">☰</button> <ul class="nav-list"> <li><a href="#o-mnie">O mnie</a></li> <li><a href="#wyniki">Wyniki</a></li> <li><a href="#ai">AI projekty</a></li> <li><a href="#plan">Plan 30/60/90</a></li> <li><a href="#kontakt" class="btn btn-primary">Kontakt</a></li> </ul> </nav> </div> </header> <main id="top"> <section class="hero"> <div class="container hero-content"> <div class="hero-text"> <h1>Tobiasz Bykowski — przyszły teammate od AI w inStreamly</h1>
       <p class="lead">
         Jestem marketing managerem, prezesem fundacji i fanatykiem AI. Zgłaszam się na stanowisko AI Commercial Innovation Expert, ale ważniejsze od nazwy w stopce jest dla mnie praca z zespołem, który rozumie technologię i stawia na kreatywność. Buduję od zera procesy, wdrażam nowe technologie, szkolę i automatyzuję — więc myślę, że się dogadamy.
@@ -308,6 +367,7 @@ input:focus, textarea:focus{border-color:var(--primary)}
   </div>
 </section>
 </main> <footer class="site-footer"> <div class="container footer-inner"> <p>© <span id="year"></span> Tobiasz Bykowski • Stworzone specjalnie dla inStreamly</p> <div class="footer-links"> <a href="#" aria-disabled="true">CV (PDF)</a> <a href="#" aria-disabled="true">Case study (wkrótce)</a> </div> </div> </footer> <script> // Rok w stopce document.getElementById('year').textContent = new Date().getFullYear(); // Mobile nav toggle const navToggle = document.querySelector('.nav-toggle'); const navList = document.querySelector('.nav-list'); if (navToggle && navList) { navToggle.addEventListener('click', () => { const open = navList.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); }); navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navList.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); })); } // Smooth scroll document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e){ const id = this.getAttribute('href').slice(1); const el = document.getElementById(id); if (el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); } }); }); // Kopiowanie e-maila const btnCopy = document.getElementById('copyEmail'); if (btnCopy){ btnCopy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(btnCopy.dataset.email); btnCopy.textContent = 'Skopiowano ✔'; setTimeout(()=> btnCopy.textContent = 'Kopiuj e-mail', 1600); } catch(e){ btnCopy.textContent = 'Błąd kopiowania'; } }); } // Formularz -> mailto (bez backendu) function handleMailto(e){ e.preventDefault(); const f = e.target; const name = encodeURIComponent(f.name.value); const email = encodeURIComponent(f.email.value); const message = encodeURIComponent(f.message.value); const body = `Imię: ${name}%0AEmail: ${email}%0A%0AWiadomość:%0A${message}`; window.location.href = `mailto:tobiasz.bykowski@gmail.com?subject=Kontakt%20ze%20strony&body=${body}`; } window.handleMailto = handleMailto; </script> </body> </html>
+
 
 
 
