@@ -150,6 +150,56 @@ margin-top:7px; box-shadow:0 0 16px rgba(124,92,255,.55);
 .roles .desc{color:var(--muted); margin-top:2px}
 .alt-roles .cta{margin-top:22px; gap:12px}
 .alt-roles .aside{color:var(--muted); font-size:13px; margin-top:10px}
+
+  .contact-hero{
+position:relative;
+padding:96px 0 84px;
+background:
+radial-gradient(900px 420px at 12% -10%, rgba(0,212,255,.16), transparent 60%),
+radial-gradient(900px 420px at 88% 110%, rgba(124,92,255,.18), transparent 60%),
+linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0) 30%),
+var(--bg);
+border-top:1px solid rgba(255,255,255,.06);
+border-bottom:1px solid rgba(255,255,255,.06);
+overflow:hidden;
+}
+.contact-hero::after{
+content:"";
+position:absolute; inset:-20% -10% auto auto;
+width:520px; height:520px; border-radius:50%;
+background:radial-gradient(circle, rgba(124,92,255,.18), rgba(0,212,255,.12) 60%, transparent 70%);
+filter:blur(40px); opacity:.5; pointer-events:none;
+}
+.contact-kicker{
+display:inline-block; padding:6px 10px; border:1px solid rgba(255,255,255,.14);
+border-radius:999px; font-size:12px; color:var(--muted); background:rgba(255,255,255,.03)
+}
+.contact-headline{
+font-size:clamp(30px, 5.5vw, 58px);
+line-height:1.05; margin:.35em 0 .2em; letter-spacing:.2px
+}
+.contact-headline .accent{
+background:linear-gradient(135deg, var(--accent), var(--primary));
+-webkit-background-clip:text; -webkit-text-fill-color:transparent;
+background-clip:text; color:transparent
+}
+.contact-intro{color:var(--muted); max-width:820px}
+.contact-chips{
+display:flex; gap:10px; flex-wrap:wrap; margin-top:18px
+}
+.contact-chips a, .contact-chips button{
+display:inline-flex; align-items:center; gap:8px;
+background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
+color:var(--text); text-decoration:none; padding:10px 12px; border-radius:999px;
+font-weight:600; cursor:pointer
+}
+.contact-chips button{background:rgba(255,255,255,.03)}
+.contact-cta{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap}
+.btn-large{padding:14px 18px; font-size:16px; border-radius:14px}
+.contact-meta{color:var(--muted); font-size:13px; margin-top:10px}
+@media (max-width:720px){
+.contact-headline{font-size:clamp(26px, 7vw, 38px)}
+}
 </style> </head> <body> <header class="site-header"> <div class="container nav"> <a class="brand" href="#top" aria-label="Strona główna">TB</a> <nav> <button class="nav-toggle" aria-label="Otwórz menu" aria-expanded="false">☰</button> <ul class="nav-list"> <li><a href="#o-mnie">O mnie</a></li> <li><a href="#wyniki">Wyniki</a></li> <li><a href="#ai">AI projekty</a></li> <li><a href="#plan">Plan 30/60/90</a></li> <li><a href="#kontakt" class="btn btn-primary">Kontakt</a></li> </ul> </nav> </div> </header> <main id="top"> <section class="hero"> <div class="container hero-content"> <div class="hero-text"> <h1>Tobiasz Bykowski — przyszły teammate od AI w inStreamly</h1>
       <p class="lead">
         Jestem marketing managerem, prezesem fundacji i fanatykiem AI. Zgłaszam się na stanowisko AI Commercial Innovation Expert, ale ważniejsze od nazwy w stopce jest dla mnie praca z zespołem, który rozumie technologię i stawia na kreatywność. Buduję od zera procesy, wdrażam nowe technologie, szkolę i automatyzuję — więc myślę, że się dogadamy.
@@ -328,6 +378,7 @@ margin-top:7px; box-shadow:0 0 16px rgba(124,92,255,.55);
   </div>
 </section>
 </main> <footer class="site-footer"> <div class="container footer-inner"> <p>© <span id="year"></span> Tobiasz Bykowski • Stworzone specjalnie dla inStreamly</p> <div class="footer-links"> <a href="#" aria-disabled="true">CV (PDF)</a> <a href="#" aria-disabled="true">Case study (wkrótce)</a> </div> </div> </footer> <script> // Rok w stopce document.getElementById('year').textContent = new Date().getFullYear(); // Mobile nav toggle const navToggle = document.querySelector('.nav-toggle'); const navList = document.querySelector('.nav-list'); if (navToggle && navList) { navToggle.addEventListener('click', () => { const open = navList.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); }); navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navList.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); })); } // Smooth scroll document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e){ const id = this.getAttribute('href').slice(1); const el = document.getElementById(id); if (el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); } }); }); // Kopiowanie e-maila const btnCopy = document.getElementById('copyEmail'); if (btnCopy){ btnCopy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(btnCopy.dataset.email); btnCopy.textContent = 'Skopiowano ✔'; setTimeout(()=> btnCopy.textContent = 'Kopiuj e-mail', 1600); } catch(e){ btnCopy.textContent = 'Błąd kopiowania'; } }); } // Formularz -> mailto (bez backendu) function handleMailto(e){ e.preventDefault(); const f = e.target; const name = encodeURIComponent(f.name.value); const email = encodeURIComponent(f.email.value); const message = encodeURIComponent(f.message.value); const body = `Imię: ${name}%0AEmail: ${email}%0A%0AWiadomość:%0A${message}`; window.location.href = `mailto:tobiasz.bykowski@gmail.com?subject=Kontakt%20ze%20strony&body=${body}`; } window.handleMailto = handleMailto; </script> </body> </html>
+
 
 
 
