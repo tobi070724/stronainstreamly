@@ -54,14 +54,14 @@ input:focus, textarea:focus{border-color:var(--primary)}
 .form-note{color:var(--muted); font-size:12px; margin:6px 0 0}
 
 /* Materiały (CV + list) */
-.downloads{grid-template-columns:1.15fr .85fr; align-items:stretch}
+.downloads{grid-template-columns:1.35fr .65fr; align-items:start; gap:16px}
 .table{width:100%; border-collapse:collapse; background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); overflow:hidden}
 .table tr+tr td{border-top:1px solid rgba(255,255,255,.06)}
-.table td{padding:12px 14px}
+.table td{padding:10px 12px}
 .table .label{color:var(--muted); width:42%}
 .download-info .cta{margin-top:14px}
-.docs{display:grid; gap:14px}
-.doc-card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:18px}
+.docs{display:grid; gap:14px; max-width:520px; margin-left:auto}
+.doc-card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015)); border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:14px}
 .doc-card h3{margin:0 0 6px}
 .doc-meta{color:var(--muted); font-size:12px}
 .doc-actions{display:flex; gap:10px; margin-top:8px; flex-wrap:wrap}
@@ -200,6 +200,7 @@ font-weight:600; cursor:pointer
 @media (max-width:720px){
 .contact-headline{font-size:clamp(26px, 7vw, 38px)}
 }
+  
 </style> </head> <body> <header class="site-header"> <div class="container nav"> <a class="brand" href="#top" aria-label="Strona główna">TB</a> <nav> <button class="nav-toggle" aria-label="Otwórz menu" aria-expanded="false">☰</button> <ul class="nav-list"> <li><a href="#o-mnie">O mnie</a></li> <li><a href="#materialy">CV i list motywacyjny</a></li> <li><a href="#ai">AI</a></li> <li><a href="#inne-role">Myslovitz?</a></li> <li><a href="#kontakt" class="btn btn-primary">Kontakt</a></li> </ul> </nav> </div> </header> <main id="top"> <section class="hero"> <div class="container hero-content"> <div class="hero-text"> <h1>Tobiasz Bykowski — przyszły teammate od AI w inStreamly</h1>
       <p class="lead">
         Jestem marketing managerem, prezesem fundacji i fanatykiem AI. Zgłaszam się na stanowisko AI Commercial Innovation Expert, ale ważniejsze od nazwy w stopce jest dla mnie praca z zespołem, który rozumie technologię i stawia na kreatywność. Buduję od zera procesy, wdrażam nowe technologie, szkolę i automatyzuję — więc myślę, że się dogadamy.
@@ -373,6 +374,7 @@ font-weight:600; cursor:pointer
   </div>
 </section>
 </main> <footer class="site-footer"> <div class="container footer-inner"> <p>© <span id="year"></span> Tobiasz Bykowski • Stworzone specjalnie dla inStreamly</p> <div class="footer-links"> <a href="#" aria-disabled="true">CV (PDF)</a> <a href="#" aria-disabled="true">Case study (wkrótce)</a> </div> </div> </footer> <script> // Rok w stopce document.getElementById('year').textContent = new Date().getFullYear(); // Mobile nav toggle const navToggle = document.querySelector('.nav-toggle'); const navList = document.querySelector('.nav-list'); if (navToggle && navList) { navToggle.addEventListener('click', () => { const open = navList.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); }); navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navList.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); })); } // Smooth scroll document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e){ const id = this.getAttribute('href').slice(1); const el = document.getElementById(id); if (el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); } }); }); // Kopiowanie e-maila const btnCopy = document.getElementById('copyEmail'); if (btnCopy){ btnCopy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(btnCopy.dataset.email); btnCopy.textContent = 'Skopiowano ✔'; setTimeout(()=> btnCopy.textContent = 'Kopiuj e-mail', 1600); } catch(e){ btnCopy.textContent = 'Błąd kopiowania'; } }); } // Formularz -> mailto (bez backendu) function handleMailto(e){ e.preventDefault(); const f = e.target; const name = encodeURIComponent(f.name.value); const email = encodeURIComponent(f.email.value); const message = encodeURIComponent(f.message.value); const body = `Imię: ${name}%0AEmail: ${email}%0A%0AWiadomość:%0A${message}`; window.location.href = `mailto:tobiasz.bykowski@gmail.com?subject=Kontakt%20ze%20strony&body=${body}`; } window.handleMailto = handleMailto; </script> </body> </html>
+
 
 
 
