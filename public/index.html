@@ -345,39 +345,42 @@ font-weight:600; cursor:pointer
 </div> </section>
 
 
-<section id="kontakt" class="section">
-  <div class="container">
-    <h2>Kontakt</h2>
-    <div class="grid contact">
-      <div class="contact-card">
-        <p>Masz 15 minut? Z przyjemnością pokażę demo i konkretne pomysły pod Wasze cele.</p>
-        <ul class="contact-list">
-          <li>Email: <a href="mailto:tobiasz.bykowski@gmail.com">tobiasz.bykowski@gmail.com</a></li>
-          <li>Telefon: <a href="tel:+48882312380">+48 882 312 380</a></li>
-        </ul>
-        <div class="cta">
-          <a class="btn btn-ghost" href="mailto:tobiasz.bykowski@gmail.com?subject=Rozmowa%20-%20inStreamly">Napisz maila</a>
-          <button class="btn btn-secondary" id="copyEmail" data-email="tobiasz.bykowski@gmail.com">Kopiuj e-mail</button>
-        </div>
-      </div>
+<section id="kontakt" class="section contact-hero"> <div class="container"> <span class="contact-kicker">Kontakt</span> <h2 class="contact-headline"> Masz 15 minut? Pokażę demo i konkretne pomysły pod Wasze cele. <span class="accent">Zacznijmy rozmowę.</span> </h2>
+<p class="contact-intro">
+  Najszybciej złapiesz mnie mailem lub telefonicznie. Kliknij przycisk — otworzy się domyślny klient poczty/połączeń.
+</p>
 
-      <form class="form" onsubmit="handleMailto(event)">
-        <label>Imię
-          <input type="text" name="name" placeholder="Twoje imię" required>
-        </label>
-        <label>E-mail
-          <input type="email" name="email" placeholder="nazwa@firma.com" required>
-        </label>
-        <label>Wiadomość
-          <textarea name="message" rows="5" placeholder="Krótko opisz temat rozmowy" required></textarea>
-        </label>
-        <button type="submit" class="btn btn-primary">Wyślij</button>
-        <p class="form-note">Formularz otworzy Twojego klienta poczty (bez żadnych zewnętrznych usług).</p>
-      </form>
+<div class="contact-chips" role="list">
+  <a role="listitem" href="mailto:tobiasz.bykowski@gmail.com?subject=Rozmowa%20-%20inStreamly" aria-label="Wyślij mail do tobiasz.bykowski@gmail.com">
+    ✉️ tobiasz.bykowski@gmail.com
+  </a>
+  <a role="listitem" href="tel:+48882312380" aria-label="Zadzwoń pod numer 48 882 312 380">
+    📞 +48 882 312 380
+  </a>
+  <button role="listitem" id="copyEmail" data-email="tobiasz.bykowski@gmail.com" aria-label="Skopiuj adres e-mail">
+    📋 Kopiuj e‑mail
+  </button>
+</div>
+
+<div class="contact-cta">
+  <a class="btn btn-primary btn-large" href="mailto:tobiasz.bykowski@gmail.com?subject=Rozmowa%20-%20inStreamly&body=Cze%C5%9B%C4%87%20Tobiasz%2C%20um%C3%B3wmy%20kr%C3%B3tk%C4%85%20rozmow%C4%99.%20Pasuj%C4%85%20mi%20terminy%3A%20..." aria-label="Wyślij e-mail">
+    Wyślij maila
+  </a>
+  <a class="btn btn-ghost btn-large" href="tel:+48882312380" aria-label="Zadzwoń teraz">
+    Zadzwoń teraz
+  </a>
+</div>
+
+<p class="contact-meta">
+  Preferujesz inny kanał? Podaj — dostosuję się. PS. Odpowiadam szybko, także po godzinach.
+</p>
+
+     
     </div>
   </div>
 </section>
 </main> <footer class="site-footer"> <div class="container footer-inner"> <p>© <span id="year"></span> Tobiasz Bykowski • Stworzone specjalnie dla inStreamly</p> <div class="footer-links"> <a href="#" aria-disabled="true">CV (PDF)</a> <a href="#" aria-disabled="true">Case study (wkrótce)</a> </div> </div> </footer> <script> // Rok w stopce document.getElementById('year').textContent = new Date().getFullYear(); // Mobile nav toggle const navToggle = document.querySelector('.nav-toggle'); const navList = document.querySelector('.nav-list'); if (navToggle && navList) { navToggle.addEventListener('click', () => { const open = navList.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); }); navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navList.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); })); } // Smooth scroll document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e){ const id = this.getAttribute('href').slice(1); const el = document.getElementById(id); if (el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); } }); }); // Kopiowanie e-maila const btnCopy = document.getElementById('copyEmail'); if (btnCopy){ btnCopy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(btnCopy.dataset.email); btnCopy.textContent = 'Skopiowano ✔'; setTimeout(()=> btnCopy.textContent = 'Kopiuj e-mail', 1600); } catch(e){ btnCopy.textContent = 'Błąd kopiowania'; } }); } // Formularz -> mailto (bez backendu) function handleMailto(e){ e.preventDefault(); const f = e.target; const name = encodeURIComponent(f.name.value); const email = encodeURIComponent(f.email.value); const message = encodeURIComponent(f.message.value); const body = `Imię: ${name}%0AEmail: ${email}%0A%0AWiadomość:%0A${message}`; window.location.href = `mailto:tobiasz.bykowski@gmail.com?subject=Kontakt%20ze%20strony&body=${body}`; } window.handleMailto = handleMailto; </script> </body> </html>
+
 
 
 
