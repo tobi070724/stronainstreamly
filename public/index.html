@@ -54,7 +54,7 @@ input:focus, textarea:focus{border-color:var(--primary)}
 .form-note{color:var(--muted); font-size:12px; margin:6px 0 0}
 
 /* Materiały (CV + list) */
-.downloads{grid-template-columns:1.35fr .65fr; align-items:start; gap:16px}
+.downloads{grid-template-columns: 1fr auto; align-items:start; gap:32px}
 .table{width:100%; border-collapse:collapse; background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); overflow:hidden}
 .table tr+tr td{border-top:1px solid rgba(255,255,255,.06)}
 .table td{padding:10px 12px}
@@ -374,6 +374,7 @@ font-weight:600; cursor:pointer
   </div>
 </section>
 </main> <footer class="site-footer"> <div class="container footer-inner"> <p>© <span id="year"></span> Tobiasz Bykowski • Stworzone specjalnie dla inStreamly</p> <div class="footer-links"> <a href="#" aria-disabled="true"></a> <a href="#" aria-disabled="true"></a> </div> </div> </footer> <script> // Rok w stopce document.getElementById('year').textContent = new Date().getFullYear(); // Mobile nav toggle const navToggle = document.querySelector('.nav-toggle'); const navList = document.querySelector('.nav-list'); if (navToggle && navList) { navToggle.addEventListener('click', () => { const open = navList.classList.toggle('open'); navToggle.setAttribute('aria-expanded', open ? 'true' : 'false'); }); navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navList.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); })); } // Smooth scroll document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e){ const id = this.getAttribute('href').slice(1); const el = document.getElementById(id); if (el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); } }); }); // Kopiowanie e-maila const btnCopy = document.getElementById('copyEmail'); if (btnCopy){ btnCopy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(btnCopy.dataset.email); btnCopy.textContent = 'Skopiowano ✔'; setTimeout(()=> btnCopy.textContent = 'Kopiuj e-mail', 1600); } catch(e){ btnCopy.textContent = 'Błąd kopiowania'; } }); } // Formularz -> mailto (bez backendu) function handleMailto(e){ e.preventDefault(); const f = e.target; const name = encodeURIComponent(f.name.value); const email = encodeURIComponent(f.email.value); const message = encodeURIComponent(f.message.value); const body = `Imię: ${name}%0AEmail: ${email}%0A%0AWiadomość:%0A${message}`; window.location.href = `mailto:tobiasz.bykowski@gmail.com?subject=Kontakt%20ze%20strony&body=${body}`; } window.handleMailto = handleMailto; </script> </body> </html>
+
 
 
 
